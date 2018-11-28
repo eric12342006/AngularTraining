@@ -1,0 +1,92 @@
+<!-- START BREADCRUMB -->
+<ul class="breadcrumb">
+	<li><a ui-sref="Home" lang="en">Home</a></li>
+	<li><a ui-sref="Home" lang="en">Page Name</a></li>
+</ul>
+<!-- END BREADCRUMB -->                                                
+
+<!-- PAGE TITLE -->
+<div class="page-title">                    
+	<h2 lang="en"><span class="fa fa-home"></span> Page Name</h2>
+</div>
+<!-- END PAGE TITLE --> 
+<div class="page-content-wrap">
+                    
+	<div class="row">
+		<div class="col-md-12">
+			<div class="alert alert-warning" role="alert" >
+				<button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+				<span lang="en" data-lang-token="alert_warning">Warning message</span>
+			</div>
+			
+			<div class="panel panel-default">  
+				<div class="panel-body">
+					<h3><span class="fa fa-cog"></span><span lang="en" data-lang-token=""> Criteria</span></h3>
+					<content>
+						{{StaffID}}<br>
+						<button ng-click="Add()">Add</button><br>
+						
+						<button ng-click="PrintScope()">print scope</button>
+						<br><br>
+						<div class="form-group col-sm-12">
+							<label class="col-sm-3" lang="en" data-lang-token="StaffID">Staff ID range:</label>
+								
+							<div class="form-inline">
+								<div class="form-group">
+									<range ng-model="staffIdRange">
+										<div class="form-group">
+											<editbox ng-model="deptEditBoxStart" program-id="hw03sf" range="start" range-value="{{editboxCtrl.ngModel.StaffID}}">
+												<div class="input-group">
+													<input class="form-control" type="text" id="card_cardID" ng-model="rangeCtrl.ngModel.start" readonly>
+													<span class="input-group-btn"><button type="button" class="btn btn-default" ng-click="OpenPageView()"><i class="fa fa-bars"></i></button></span>
+												</div>
+											</editbox>
+										</div>
+										<div class="form-group">
+											<editbox ng-model="deptEditBoxEnd" program-id="hw03sf" range="end" range-value="{{editboxCtrl.ngModel.StaffID}}">
+												<div class="input-group">
+													<input class="form-control" type="text" id="card_cardID" ng-model="rangeCtrl.ngModel.end" readonly>
+													<span class="input-group-btn"><button type="button" class="btn btn-default" ng-click="OpenPageView()"><i class="fa fa-bars"></i></button></span>
+												</div>
+											</editbox>
+										</div>
+										
+										<div class="form-group">
+											<input type="checkbox" ng-model="rangeCtrl.ngModel.isAll" id="isAllStaff" class="staffAllRange">
+										</div>
+									</range>
+								</div>
+								<div class="form-group">
+									<label for="isAll" lang="en" data-lang-token="all in range">ALL in range</label>
+								</div>
+							</div>
+						</div>
+						
+						<div class="form-group col-sm-12">
+							<label class="col-sm-3" lang="en" data-lang-token="StaffID">EditBox:</label>
+							
+							<editbox ng-model="deptEditBoxStart" program-id="hw03sf" range="start" range-value="{{editboxCtrl.ngModel.StaffID}}">
+								<div class="input-group">
+									<input class="form-control" type="text" id="card_cardID" ng-model="rangeCtrl.ngModel.start" readonly>
+									<span class="input-group-btn"><button type="button" class="btn btn-default" ng-click="OpenPageView()"><i class="fa fa-bars"></i></button></span>
+								</div>
+							</editbox>
+						</div>
+					</content>
+				</div>
+			</div>
+		</div>
+	</div>  
+</div>
+
+<style>
+.modal {
+	position:fixed;
+	top:auto;
+	height: 100%;
+}
+
+.modal-label {
+	font-weight: bolder;
+}
+</style>
